@@ -2,9 +2,9 @@ import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 
 class ResourceItem extends Component {
-  //   onClick = (id) => (event) => {
-  //     this.props.history.push(`/${id}`);
-  //   };
+  onClick = (id) => (event) => {
+    this.props.history.push(`/${id}`);
+  };
   render() {
     return (
       <div>

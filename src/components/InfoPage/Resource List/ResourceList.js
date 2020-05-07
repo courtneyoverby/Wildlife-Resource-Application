@@ -5,7 +5,7 @@ import ResourceItem from "../ResourceItem/ResourceItem.js";
 class ResourceList extends Component {
   componentDidMount() {
     console.log(this.props.store.resources.map);
-    this.props.dispatch({ type: "GET_RESOURCES" });
+    this.props.dispatch({ type: "FETCH_RESOURCES" });
   }
   render() {
     return (
