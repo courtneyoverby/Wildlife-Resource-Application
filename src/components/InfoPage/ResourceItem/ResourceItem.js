@@ -6,8 +6,10 @@ class ResourceItem extends Component {
     return (
       <div>
         <ul>
-          <img alt="Resource Logo" src={`/${this.props.resource.photo}`} />
-          <h3>{this.props.resource.name}</h3>
+          <h3>{this.props.resources.name}</h3>
+          <span>{this.props.resources.hours}</span>
+          <span>{this.props.resources.number}</span>
+          <span>{this.props.resources.address}</span>
         </ul>
       </div>
     );
