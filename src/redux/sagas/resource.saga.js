@@ -14,7 +14,7 @@ function* fetchResources(action) {
 }
 
 function* resourceSaga() {
-  yield takeLatest("FETCH_RESOURCE", fetchResources);
+  yield takeLatest("FETCH_RESOURCES", fetchResources);
 }
 
 export default resourceSaga;

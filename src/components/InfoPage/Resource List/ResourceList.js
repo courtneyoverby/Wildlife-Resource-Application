@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import ResourceItem from "../ResourceItem/ResourceItem.js";
+import ResourceItem from "../ResourceItem/ResourceItem";
 
 class ResourceList extends Component {
   componentDidMount() {
-    console.log(this.props.store.resources.map);
     this.props.dispatch({ type: "FETCH_RESOURCES" });
   }
   render() {
+    console.log(this.props.store.resources);
     return (
       <div>
         {this.props.store.resources.map((resources) => {
