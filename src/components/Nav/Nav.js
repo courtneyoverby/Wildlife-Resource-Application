@@ -19,7 +19,7 @@ const Nav = (props) => {
   return (
     <div className="nav">
       <Link to="/home">
-        <h2 className="nav-title">Wildlife Rehabilitation Application</h2>
+        <h1 className="nav-title">Wildlife Rehabilitation Application</h1>
       </Link>
       <div className="nav-right">
         <Link className="nav-link" to={loginLinkData.path}>

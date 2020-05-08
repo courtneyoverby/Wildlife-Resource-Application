@@ -22,8 +22,8 @@ router.get("/", (req, res) => {
 
 router.post("/", (req, res) => {
   const newResource = req.body;
-  const queryText = `INSERT INTO resources ("name", "hours", "number", "address")
-                      VALUES ($1, $2, $3, $4)`;
+  const queryText = `INSERT INTO resources ("name", "hours", "number", "address", experience)
+                      VALUES ($1, $2, $3, $4, $5)`;
   const queryValues = [
     newResource.name,
     newResource.hours,
@@ -57,7 +57,7 @@ router.delete("/", (req, res) => {
 });
 
 router.put("/", (req, res) => {
-  const queryString = `UPDATE "resources" SET "name"=$1, "hours"=$2, "number"=$3, "address"=$4, WHERE "id"=$5;`;
+  const queryString = `UPDATE "resources" SET "name"=$1, "hours"=$2, "number"=$3, "address"=$4, "experience"=$5, WHERE "id"=$6;`;
 
   pool
     .query(queryString, [
@@ -66,6 +66,7 @@ router.put("/", (req, res) => {
       req.params.hours,
       req.params.number,
       req.params.address,
+      req.params.experience,
     ])
     .then((response) => {
       res.sendStatus(200);

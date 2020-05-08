@@ -8,6 +8,7 @@ function* fetchResources(action) {
       type: "SET_RESOURCES",
       payload: response.data,
     });
+    yield console.log(response.data);
   } catch (err) {
     console.warn(err);
   }

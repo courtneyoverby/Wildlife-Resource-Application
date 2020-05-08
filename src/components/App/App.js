@@ -18,6 +18,7 @@ import InfoPage from "../InfoPage/InfoPage";
 import LandingPage from "../LandingPage/LandingPage";
 import LoginPage from "../LoginPage/LoginPage";
 import RegisterPage from "../RegisterPage/RegisterPage";
+import ResourceDetails from "../ResourceDetails/ResourceDetails";
 
 import "./App.css";
 
@@ -36,8 +37,13 @@ class App extends Component {
             <Redirect exact from="/" to="/home" />
             {/* Visiting localhost:3000/about will show the about page.
             This is a route anyone can see, no login necessary */}
-
             <Route exact path="/home" component={LandingPage} />
+            {/* When the user is on the resource list page and selects a resource, they will be directed to the resource item page at the route below*/}
+            <ProtectedRoute
+              exact
+              path="/details/:id"
+              component={ResourceDetails}
+            />
             {/* For protected routes, the view could show one of several things on the same route.
             Visiting localhost:3000/user will show the UserPage if the user is logged in.
             If the user is not logged in, the ProtectedRoute will show the 'Login' or 'Register' page.
