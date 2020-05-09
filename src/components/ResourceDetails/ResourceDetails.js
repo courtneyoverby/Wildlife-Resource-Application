@@ -6,18 +6,20 @@ class ResourceDetails extends Component {
     this.props.dispatch({ type: "FETCH_RESOURCES" });
   }
 
+  backOnClick = (event) => {
+    this.props.history.push("/resources");
+  };
+
+  editOnClick = (event) => {
+    this.props.history.push("/edit/${this.props.match.params.id}");
+  };
+
   render() {
     const id = Number(this.props.match.params.id);
     const filteredResource = this.props.store.resources.filter((resources) => {
       return resources.id === id;
     });
-    console.log(filteredResource);
     return (
-      //   <div>
-      //     <span>{this.props.store.resources.number}</span>
-      //     <span>{this.props.store.resources.experience}</span>
-      //     <span>{this.props.store.resources.hours}</span>
-      //   </div>
       <div>
         {filteredResource.map((details) => {
           return (
@@ -25,7 +27,10 @@ class ResourceDetails extends Component {
               <h4>{details.name}</h4>
               <p>{details.number}</p>
               <p>{details.hours}</p>
-              <p>{details.experience}</p>
+              <p>{details.information}</p>
+              <p>{details.photo}</p>
+              <button>Edit</button>
+              <button onClick={this.backOnClick}>Go Back</button>
             </div>
           );
         })}

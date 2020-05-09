@@ -9,6 +9,7 @@ class ResourceItem extends Component {
     return (
       <div>
         <ul>
+          <p>{this.props.resources.pic}</p>
           <h3 onClick={this.onClick(this.props.resources.id)}>
             {this.props.resources.name}
           </h3>
