@@ -28,8 +28,7 @@ class ResourceDetails extends Component {
               <p>{details.number}</p>
               <p>{details.hours}</p>
               <p>{details.information}</p>
-              <p>{details.photo}</p>
-              <button>Edit</button>
+              <button onClick={this.editOnClick}>Edit</button>
               <button onClick={this.backOnClick}>Go Back</button>
             </div>
           );
