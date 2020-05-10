@@ -11,7 +11,7 @@ class ResourceDetails extends Component {
   };
 
   editOnClick = (event) => {
-    this.props.history.push("/edit/${this.props.match.params.id}");
+    this.props.history.push(`/edit/${this.props.match.params.id}`);
   };
 
   render() {
