@@ -45,11 +45,7 @@ class App extends Component {
               component={ResourceDetails}
             />
             {/* When the user is on the resource list page and clicks Edit, they will be directed to the resource item edit page at the route below*/}
-            {/* <ProtectedRoute
-              exact
-              path="/edit/${this.props.match.params.id}"
-              component={ResourcesEdit}
-            /> */}
+            <ProtectedRoute exact path="/edit/:id" component={ResourcesEdit} />
             {/* For protected routes, the view could show one of several things on the same route.
             Visiting localhost:3000/user will show the UserPage if the user is logged in.
             If the user is not logged in, the ProtectedRoute will show the 'Login' or 'Register' page.
