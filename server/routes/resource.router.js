@@ -20,6 +20,18 @@ router.get("/", (req, res) => {
     });
 });
 
+router.get("/", (req, res) => {
+  console.log(req.resource);
+  const queryText = `SELECT * FROM "resources" `;
+  pool
+    .query(queryText)
+    .then((results) => res.send(results.rows))
+    .catch((error) => {
+      console.log("Error making SELECT for resources:", error);
+      res.sendStatus(500);
+    });
+});
+
 router.post("/", (req, res) => {
   const newResource = req.body;
   const queryText = `INSERT INTO resources ("name", "hours", "number", "address", "information")

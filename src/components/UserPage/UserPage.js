@@ -5,10 +5,17 @@ import mapStoreToProps from "../../redux/mapStoreToProps";
 
 // this could also be written with destructuring parameters as:
 // const UserPage = ({ user }) => (
-// and then instead of `props.user.username` you could use `user.username`
+
 const UserPage = (props) => (
   <div>
     <h1 id="welcome">Welcome, {props.store.user.username}!</h1>
+    <p>
+      Click on a photo below to read more about the wildlife rehabilitation has
+      saved!
+    </p>
+    <img alt="Owl" src="../images/WR1.jpg"></img>
+    <img alt="Porcupine" src="../images/WR2.jpg"></img>
+    <img alt="Opossums" src="../images/WR3.jpg"></img>
 
     <LogOutButton className="log-in" />
   </div>
