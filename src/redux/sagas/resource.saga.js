@@ -14,8 +14,18 @@ function* fetchResources(action) {
   }
 }
 
+function* saveResources(action) {
+  try {
+    yield axios.post("/api/element", action.payload);
+    yield put({ type: "GET_RESOURCES" });
+  } catch (err) {
+    console.warn("Error with saveResource:", err);
+  }
+}
+
 function* resourceSaga() {
   yield takeLatest("FETCH_RESOURCES", fetchResources);
+  yield takeEvery("SAVE_RESOURCES", saveResources);
 }
 
 export default resourceSaga;
