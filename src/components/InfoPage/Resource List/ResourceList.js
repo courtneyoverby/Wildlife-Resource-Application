@@ -10,7 +10,7 @@ class ResourceList extends Component {
     console.log(this.props.store.resources);
     return (
       <div>
-        {this.props.store.resources.map((resources) => {
+        {this.props.store.resources.resourceReducer.map((resources) => {
           return <ResourceItem key={resources.id} resources={resources} />;
         })}
       </div>
