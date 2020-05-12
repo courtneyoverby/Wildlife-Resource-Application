@@ -41,7 +41,7 @@ class LandingPage extends Component {
               normally the first ones to learn about disease outbreaks, which is
               very important for disease such as rabies or West Nile Virus- both
               that wildlife can give to people! Want to learn about the wildlife
-              rehabilitation centers in Missouri? Sign up or log in!
+              rehabilitation centers in Missouri and Kansas? Sign up or log in!
             </p>
           </div>
           <div className="grid-col grid-col_4">

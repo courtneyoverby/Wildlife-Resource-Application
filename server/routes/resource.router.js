@@ -68,18 +68,19 @@ router.delete("/", (req, res) => {
     });
 });
 
-router.put("/", (req, res) => {
+router.put("/edit/:id", (req, res) => {
   const queryString = `UPDATE "resources" SET "name"=$1, "hours"=$2, "number"=$3, "address"=$4, "information"=$5, WHERE "id"=$6;`;
-
+  const queryData = [
+    req.params.name,
+    req.params.hours,
+    req.params.number,
+    req.params.address,
+    req.params.information,
+    req.params.id,
+  ];
+  console.log("inRouter", queryData);
   pool
-    .query(queryString, [
-      req.params.id,
-      req.params.name,
-      req.params.hours,
-      req.params.number,
-      req.params.address,
-      req.params.information,
-    ])
+    .query(queryString, queryData)
     .then((response) => {
       res.sendStatus(200);
     })

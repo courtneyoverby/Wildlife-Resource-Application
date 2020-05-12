@@ -9,12 +9,10 @@ const resourceReducer = (state = [], action) => {
   }
 };
 
-const resourceListReducer = (state = [], action) => {
+const detailsReducer = (state = {}, action) => {
   switch (action.type) {
-    case "SET_RESOURCES":
+    case "SET_DETAILS":
       return action.payload;
-    case "CLEAR_RESOURCES":
-      return [];
     default:
       return state;
   }
@@ -22,5 +20,5 @@ const resourceListReducer = (state = [], action) => {
 
 export default combineReducers({
   resourceReducer,
-  resourceListReducer,
+  detailsReducer,
 });
