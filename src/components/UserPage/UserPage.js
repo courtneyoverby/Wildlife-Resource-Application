@@ -6,6 +6,8 @@ import mapStoreToProps from "../../redux/mapStoreToProps";
 // this could also be written with destructuring parameters as:
 // const UserPage = ({ user }) => (
 
+// handleClick =
+
 const UserPage = (props) => (
   <div>
     <h1 id="welcome">Welcome, {props.store.user.username}!</h1>

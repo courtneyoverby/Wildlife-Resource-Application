@@ -8,6 +8,7 @@ import {
 
 import { connect } from "react-redux";
 
+import "./App.css";
 import Nav from "../Nav/Nav";
 import Footer from "../Footer/Footer";
 
@@ -19,8 +20,11 @@ import LandingPage from "../LandingPage/LandingPage";
 import LoginPage from "../LoginPage/LoginPage";
 import RegisterPage from "../RegisterPage/RegisterPage";
 import ResourceDetails from "../ResourceDetails/ResourceDetails";
-import "./App.css";
 import ResourcesModal from "../ResourcesModal/ResourcesModal";
+
+import SuccessOwl from "../SuccessStories/SuccessOwl";
+import SuccessOpossum from "../SuccessStories/SuccessOpossum";
+import SuccessPorcupine from "../SuccessStories/SuccessPorcupine";
 
 class App extends Component {
   componentDidMount() {
@@ -43,6 +47,18 @@ class App extends Component {
               exact
               path="/details/:id"
               component={ResourceDetails}
+            />
+            {/* When the user clicks a photo on the homepage, they will be directed to */}
+            <ProtectedRoute exact path="/owl-success" component={SuccessOwl} />
+            <ProtectedRoute
+              exact
+              path="/opossum-success"
+              component={SuccessOpossum}
+            />
+            <ProtectedRoute
+              exact
+              path="/porcupine-success"
+              component={SuccessPorcupine}
             />
             {/* When the user is on the resource list page and clicks Edit, they will be directed to the resource item edit page at the route below*/}
             <ProtectedRoute exact path="/edit/:id" component={ResourcesModal} />
