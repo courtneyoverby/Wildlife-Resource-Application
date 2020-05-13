@@ -10,6 +10,8 @@ class ResourceList extends Component {
     console.log(this.props.store.resources);
     return (
       <div>
+        <h4>Your Current List of Resources</h4>
+        <button>Add Resource</button>
         {this.props.store.resources.resourceReducer.map((resources) => {
           return <ResourceItem key={resources.id} resources={resources} />;
         })}
