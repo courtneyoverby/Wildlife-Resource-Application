@@ -44,9 +44,9 @@ function* saveResources(action) {
 
 function* deleteResource(action) {
   try {
-    yield axios.delete(`/resource/${action.payload}`);
+    yield axios.delete(`/api/resource/delete/${action.payload}`);
     yield put({
-      type: "GET_RESOURCE",
+      type: "FETCH_RESOURCES",
     });
   } catch (err) {
     console.log("error HELP:", err);

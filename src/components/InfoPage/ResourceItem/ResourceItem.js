@@ -22,13 +22,9 @@ class ResourceItem extends Component {
   // };
 
   render() {
-    const handleClick = (path) => (event) => {
-      this.props.history.push(path);
-    };
     return (
       <div>
         <ul>
-          <button onClick={handleClick("/add-resource")}> Add Resource </button>
           <p>{this.props.resources.pic}</p>
           <h4 onClick={this.onClick(this.props.resources.id)}>
             {this.props.resources.name}
