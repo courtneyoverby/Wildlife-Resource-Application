@@ -28,4 +28,4 @@ class ResourceItem extends Component {
     );
   }
 }
-export default connect(withRouter)(ResourceItem);
+export default connect()(withRouter(ResourceItem));
