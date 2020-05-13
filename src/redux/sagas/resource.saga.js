@@ -53,11 +53,26 @@ function* deleteResource(action) {
   }
 }
 
+function* addResource(action) {
+  try {
+    console.log(action.payload);
+    let response = yield axios.post(`/api/resource/add`, action.payload);
+    yield put({
+      type: "FETCH_RESOURCES",
+      payload: response.data,
+    });
+    yield console.log(response.data);
+  } catch (err) {
+    console.warn(err);
+  }
+}
+
 function* resourceSaga() {
   yield takeEvery("FETCH_RESOURCES", fetchAllResources);
   yield takeEvery("GET_RESOURCE", getResource);
   yield takeEvery("SAVE_RESOURCES", saveResources);
   yield takeEvery("REMOVE_RESOURCE", deleteResource);
+  yield takeEvery("ADD_RESOURCE", addResource);
 }
 
 export default resourceSaga;
