@@ -55,8 +55,8 @@ function* deleteResource(action) {
 
 function* addResource(action) {
   try {
-    console.log(action.payload);
-    let response = yield axios.post(`/api/resource/add`, action.payload);
+    const resourceId = action.payload;
+    let response = yield axios.get(`/api/resource/details/${resourceId}`);
     yield put({
       type: "FETCH_RESOURCES",
       payload: response.data,

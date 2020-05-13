@@ -14,13 +14,25 @@ class ResourceItem extends Component {
     });
   };
 
+  // addResource = () => {
+  //   this.props.dispatch({
+  //     type: "ADD_RESOURCE",
+  //     payload: this.props.resources.id,
+  //   });
+  // };
+
   render() {
+    const handleClick = (path) => (event) => {
+      this.props.history.push(path);
+    };
     return (
       <div>
         <ul>
-          <h3 onClick={this.onClick(this.props.resources.id)}>
+          <button onClick={handleClick("/add-resource")}> Add Resource </button>
+          <p>{this.props.resources.pic}</p>
+          <h4 onClick={this.onClick(this.props.resources.id)}>
             {this.props.resources.name}
-          </h3>
+          </h4>
           <span>{this.props.resources.address}</span>
           <button onClick={this.onDeleteClick}> Remove </button>
         </ul>
