@@ -17,7 +17,7 @@ function* fetchAllResources(action) {
 function* getResource(action) {
   try {
     const resourceId = action.payload;
-    const response = yield axios.get(`/api/resources/details/${resourceId}`);
+    const response = yield axios.get(`/api/resource/details/${resourceId}`);
     yield put({
       type: "SET_DETAILS",
       payload: response.data[0],
@@ -29,13 +29,27 @@ function* getResource(action) {
 
 function* saveResources(action) {
   try {
-    console.log("inSaga", action.payload);
-    yield axios.put("/api/resources/edit", action.payload);
+    yield axios.put(
+      `/api/resource/edit/${action.payload.id}`,
+      action.payload.newDetails
+    );
     yield put({
-      type: "GET_RESOURCES",
+      type: "SET_DETAILS",
+      payload: action.payload,
     });
   } catch (err) {
     console.warn(err);
+  }
+}
+
+function* deleteResource(action) {
+  try {
+    yield axios.delete(`/resource/${action.payload}`);
+    yield put({
+      type: "GET_RESOURCE",
+    });
+  } catch (err) {
+    console.log("error HELP:", err);
   }
 }
 
@@ -43,6 +57,7 @@ function* resourceSaga() {
   yield takeEvery("FETCH_RESOURCES", fetchAllResources);
   yield takeEvery("GET_RESOURCE", getResource);
   yield takeEvery("SAVE_RESOURCES", saveResources);
+  yield takeEvery("REMOVE_RESOURCE", deleteResource);
 }
 
 export default resourceSaga;

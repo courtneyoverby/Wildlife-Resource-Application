@@ -30,29 +30,28 @@ class ResourcesModal extends Component {
     let newDetails = this.state;
 
     if (newDetails.name == null || newDetails.name === "") {
-      newDetails.name = this.props.store.resources.name;
+      newDetails.name = this.props.store.resources.resourceReducer.name;
     }
 
     if (newDetails.hours == null || newDetails.hours === "") {
-      newDetails.hours = this.props.store.resources.hours;
+      newDetails.hours = this.props.store.resources.resourceReducer.hours;
     }
 
     if (newDetails.number == null || newDetails.number === "") {
-      newDetails.number = this.props.store.resources.number;
+      newDetails.number = this.props.store.resources.resourceReducer.number;
     }
 
     if (newDetails.address == null || newDetails.address === "") {
-      newDetails.address = this.props.store.resources.address;
+      newDetails.address = this.props.store.resources.resourceReducer.address;
     }
 
     if (newDetails.information == null || newDetails.information === "") {
-      newDetails.information = this.props.store.resources.information;
+      newDetails.information = this.props.store.resources.resourceReducer.information;
     }
 
-    console.log("inModal", newDetails);
     this.props.dispatch({
       type: "SAVE_RESOURCES",
-      payload: newDetails,
+      payload: { newDetails, id: this.props.match.params.id },
     });
     // navigate to the details page
     this.props.history.push(`/details/${this.props.match.params.id}`);

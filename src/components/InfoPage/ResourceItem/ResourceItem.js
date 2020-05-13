@@ -1,10 +1,19 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
+import { connect } from "react-redux";
 
 class ResourceItem extends Component {
   onClick = (id) => (event) => {
     this.props.history.push(`/details/${id}`);
   };
+
+  onDeleteClick = () => {
+    this.props.dispatch({
+      type: "REMOVE_RESOURCE",
+      payload: this.props.resources.id,
+    });
+  };
+
   render() {
     return (
       <div>
@@ -13,11 +22,10 @@ class ResourceItem extends Component {
             {this.props.resources.name}
           </h3>
           <span>{this.props.resources.address}</span>
-          <button>Delete</button>
+          <button onClick={this.onDeleteClick}> Remove </button>
         </ul>
       </div>
     );
   }
 }
-
-export default withRouter(ResourceItem);
+export default connect(withRouter)(ResourceItem);

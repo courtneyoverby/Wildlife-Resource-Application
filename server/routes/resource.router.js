@@ -54,6 +54,7 @@ router.post("/", (req, res) => {
 });
 
 router.delete("/", (req, res) => {
+  console.log(req.params.id);
   const itemId = req.params.id;
   const queryText = `DELETE FROM "resources" WHERE "id" = $1;`;
 
@@ -69,16 +70,15 @@ router.delete("/", (req, res) => {
 });
 
 router.put("/edit/:id", (req, res) => {
-  const queryString = `UPDATE "resources" SET "name"=$1, "hours"=$2, "number"=$3, "address"=$4, "information"=$5, WHERE "id"=$6;`;
+  const queryString = `UPDATE "resources" SET "name"=$1, "hours"=$2, "number"=$3, "address"=$4, "information"=$5 WHERE "id"=$6;`;
   const queryData = [
-    req.params.name,
-    req.params.hours,
-    req.params.number,
-    req.params.address,
-    req.params.information,
+    req.body.name,
+    req.body.hours,
+    req.body.number,
+    req.body.address,
+    req.body.information,
     req.params.id,
   ];
-  console.log("inRouter", queryData);
   pool
     .query(queryString, queryData)
     .then((response) => {
