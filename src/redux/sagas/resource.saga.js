@@ -16,10 +16,9 @@ function* fetchAllResources(action) {
 
 function* getResource(action) {
   try {
-    const resourceId = action.payload;
-    const response = yield axios.get(`/api/resource/details/${resourceId}`);
+    const response = yield axios.get(`/api/resource/details`, action.payload);
     yield put({
-      type: "SET_DETAILS",
+      type: "GET_DETAILS",
       payload: response.data[0],
     }); // put() is the same as this.props.dispatch()
   } catch (err) {
@@ -55,8 +54,7 @@ function* deleteResource(action) {
 
 function* addResource(action) {
   try {
-    const resourceId = action.payload;
-    let response = yield axios.get(`/api/resource/details/${resourceId}`);
+    let response = yield axios.post(`/api/resource`, action.payload);
     yield put({
       type: "FETCH_RESOURCES",
       payload: response.data,

@@ -15,6 +15,7 @@ class ResourceList extends Component {
     return (
       <div>
         <h4>Your Current List of Resources</h4>
+        <p>Click a resource name to read more, or add a new resource!</p>
         <button onClick={handleClick("/add-resource")}> Add Resource </button>
         {this.props.store.resources.resourceReducer.map((resources) => {
           return <ResourceItem key={resources.id} resources={resources} />;

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
+import { Button, TextField } from "@material-ui/core";
 
 class ResourceAdd extends Component {
   state = {
@@ -76,37 +77,54 @@ class ResourceAdd extends Component {
       <div>
         <h3>Add Your Own Resource!</h3>
         <form onSubmit={this.addResource}>
-          <input
+          <TextField
+            size="small"
+            variant="outlined"
+            color="secondary"
             placeholder="Insert Name"
             type="text"
             value={this.state.newResource.name}
             onChange={this.handleNameChange}
           />
-          <input
+          <TextField
+            size="small"
+            variant="outlined"
+            color="secondary"
             placeholder="Insert Hours"
             type="text"
             value={this.state.newResource.hours}
             onChange={this.handleHoursChange}
           />
-          <input
+          <TextField
+            size="small"
+            variant="outlined"
+            color="secondary"
             placeholder="Insert Number"
             type="text"
             value={this.state.newResource.number}
             onChange={this.handleNumberChange}
           />
-          <input
+          <TextField
+            size="small"
+            variant="outlined"
+            color="secondary"
             placeholder="Insert Address"
             type="text"
             value={this.state.newResource.address}
             onChange={this.handleAddressChange}
           />
-          <input
+          <TextField
+            size="small"
+            variant="outlined"
+            color="secondary"
             placeholder="Insert Information"
             type="text"
             value={this.state.newResource.information}
             onChange={this.handleInfoChange}
           />
-          <button>Add Resources</button>
+          <Button size="small" variant="contained" color="secondary">
+            Add Resource
+          </Button>
         </form>
       </div>
     );
