@@ -4,24 +4,8 @@ import { connect } from "react-redux";
 import LogOutButton from "../LogOutButton/LogOutButton";
 import "./Nav.css";
 import mapStoreToProps from "../../redux/mapStoreToProps";
-import { Typography, AppBar, Toolbar, IconButton } from "@material-ui/core";
-import { makeStyles } from "@material-ui/core/styles";
-
-const useStyles = makeStyles((theme) => ({
-  root: {
-    flexGrow: 1,
-  },
-  menuButton: {
-    marginRight: theme.spacing(2),
-  },
-  title: {
-    flexGrow: 1,
-  },
-}));
 
 const Nav = (props) => {
-  const classes = useStyles();
-
   let loginLinkData = {
     path: "/home",
     text: "Login / Register",
@@ -33,54 +17,35 @@ const Nav = (props) => {
   }
 
   return (
-    <div className={classes.root}>
-            
-      <AppBar position="static">
-                
-        <Toolbar>
-                    
-          <IconButton
-            edge="start"
-            className={classes.menuButton}
-            color="inherit"
-            aria-label="menu"
-          >
-                      
-          </IconButton>{" "}
-              
-          <Typography align="left" variant="button" className={classes.title}>
-                             
-            <Link to="/home">
-                            Wildlife Rehabilitation Application              
+    <div className="nav">
+      <div></div>
+                           
+      <Link className="head-link" to="/home">
+        <img
+          className="header-logo"
+          src="../Images/Wildlife.jpg"
+          alt="WRA Logo"
+        ></img>
+                  
+      </Link>
+      <div className="nav-right">
+        <Link className="nav-link" to={loginLinkData.path}>
+          {loginLinkData.text}  
+        </Link>
+                  
+        {props.store.user.id && (
+          <>
+                          
+            <Link className="nav-link" to="/resources">
+                        Resources               
             </Link>
-            {""}
-                 
-          </Typography>
-                          
-          <Link to={loginLinkData.path}>
-            <Typography variant="button">
-                          {loginLinkData.text}
-                      
-            </Typography>
-              
-          </Link>
-                    
-          {props.store.user.id && (
-            <>
-                            
-              <Link to="/resources">
-                                Resources               
-              </Link>
-                            
-              <LogOutButton />
-                          
-            </>
-          )}
-                  
-        </Toolbar>
-              
-      </AppBar>
-          
+                          
+            <LogOutButton />
+                        
+          </>
+        )}
+      </div>
+                 
     </div>
   );
 };

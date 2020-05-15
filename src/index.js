@@ -9,10 +9,6 @@ import rootReducer from "./redux/reducers/_root.reducer"; // imports ./redux/red
 import rootSaga from "./redux/sagas/_root.saga"; // imports ./redux/sagas/index.js
 
 import App from "./components/App/App";
-import theme from "./theme";
-
-import CssBaseline from "@material-ui/core/CssBaseline";
-import { ThemeProvider } from "@material-ui/core/styles";
 
 const sagaMiddleware = createSagaMiddleware();
 
@@ -38,11 +34,7 @@ sagaMiddleware.run(rootSaga);
 
 ReactDOM.render(
   <Provider store={store}>
-    <ThemeProvider theme={theme}>
-      <CssBaseline />
-      <App />
-    </ThemeProvider>
+    <App />
   </Provider>,
-
   document.getElementById("react-root")
 );

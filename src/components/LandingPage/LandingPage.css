@@ -13,7 +13,7 @@ Button
 -------------------------------------------------------------------------------- */
 
 .btn {
-  background-color: #00acb0;
+  background-color: #40231c;
   border-radius: 4px;
   color: #f8f8f8;
   display: inline-block;
@@ -34,8 +34,23 @@ Button
 }
 
 .btn:hover {
-  background-color: #008183;
+  background-color: #2a1712;
   text-decoration: none;
+}
+
+.landing-p {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  color: #f8f8f8;
+  line-height: 2;
+}
+
+.land-head {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  color: #f8f8f8;
+}
+
+.member-txt {
+  color: #f8f8f8;
 }
 
 /* --------------------------------------------------------------------------------
@@ -120,7 +135,7 @@ Grid
 }
 
 .bg-img {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
     url("/images/fox.jpg");
   background-position: right left;
   background-repeat: no-repeat;
