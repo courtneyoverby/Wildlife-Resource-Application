@@ -1,5 +1,8 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import swal from "sweetalert";
+import { Button, TextField } from "@material-ui/core";
+
 class ResourcesEdit extends Component {
   constructor(props) {
     super(props);
@@ -28,34 +31,51 @@ class ResourcesEdit extends Component {
   };
 
   clickSaveDetails = (event) => {
-    // dispatch to saga to make API call
-    let newDetails = this.state;
+    swal({
+      title: "Ready?",
+      text: "Once saved, your resource will be added to your list! ",
+      icon: "success",
+      buttons: true,
+      dangerMode: false,
+      closeOnClickOutside: true,
+    }).then((willSave) => {
+      if (willSave) {
+        // dispatch to saga to make API call
+        let newDetails = this.state;
 
-    if (newDetails.name == null || newDetails.name === "") {
-      newDetails.name = this.props.store.resources.resourceReducer.name;
-    }
+        if (newDetails.name == null || newDetails.name === "") {
+          newDetails.name = this.props.store.resources.resourceReducer.name;
+        }
 
-    if (newDetails.hours == null || newDetails.hours === "") {
-      newDetails.hours = this.props.store.resources.resourceReducer.hours;
-    }
+        if (newDetails.hours == null || newDetails.hours === "") {
+          newDetails.hours = this.props.store.resources.resourceReducer.hours;
+        }
 
-    if (newDetails.number == null || newDetails.number === "") {
-      newDetails.number = this.props.store.resources.resourceReducer.number;
-    }
+        if (newDetails.number == null || newDetails.number === "") {
+          newDetails.number = this.props.store.resources.resourceReducer.number;
+        }
 
-    if (newDetails.address == null || newDetails.address === "") {
-      newDetails.address = this.props.store.resources.resourceReducer.address;
-    }
+        if (newDetails.address == null || newDetails.address === "") {
+          newDetails.address = this.props.store.resources.resourceReducer.address;
+        }
 
-    if (newDetails.information == null || newDetails.information === "") {
-      newDetails.information = this.props.store.resources.resourceReducer.information;
-    }
+        if (newDetails.information == null || newDetails.information === "") {
+          newDetails.information = this.props.store.resources.resourceReducer.information;
+        }
 
-    this.props.dispatch({
-      type: "SAVE_RESOURCES",
-      payload: { newDetails, id: this.props.match.params.id },
+        this.props.dispatch({
+          type: "SAVE_RESOURCES",
+          payload: { newDetails, id: this.props.match.params.id },
+        });
+        swal("Poof! Your resource has been saved!", {
+          icon: "success",
+        });
+      } else {
+        swal(
+          "You cancelled your edit! Click edit again to continue, or go back to your list!"
+        );
+      }
     });
-    console.log(newDetails);
     // navigate to the details page
     this.props.history.push(`/details/${this.props.match.params.id}`);
   };
@@ -66,7 +86,7 @@ class ResourcesEdit extends Component {
         <h3>Edit This Resource</h3>
         <br />
         <div>
-          <button
+          <Button
             className="saveBtn"
             size="small"
             variant="contained"
@@ -74,10 +94,10 @@ class ResourcesEdit extends Component {
             onClick={this.clickSaveDetails}
           >
             Save
-          </button>
+          </Button>
         </div>
         <br />
-        <input
+        <TextField
           size="small"
           variant="outlined"
           color="secondary"
@@ -85,7 +105,7 @@ class ResourcesEdit extends Component {
           onChange={this.changeDetails("name")}
           type="text"
         />
-        <input
+        <TextField
           size="small"
           variant="outlined"
           color="secondary"
@@ -93,7 +113,7 @@ class ResourcesEdit extends Component {
           onChange={this.changeDetails("hours")}
           type="text"
         />
-        <input
+        <TextField
           size="small"
           variant="outlined"
           color="secondary"
@@ -101,7 +121,7 @@ class ResourcesEdit extends Component {
           onChange={this.changeDetails("number")}
           type="text"
         />
-        <input
+        <TextField
           size="small"
           variant="outlined"
           color="secondary"
@@ -109,7 +129,7 @@ class ResourcesEdit extends Component {
           onChange={this.changeDetails("address")}
           type="text"
         />
-        <input
+        <TextField
           size="small"
           variant="outlined"
           color="secondary"

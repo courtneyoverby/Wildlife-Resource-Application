@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
-import { Button, TextField } from "@material-ui/core";
 
 class ResourceAdd extends Component {
   state = {
@@ -77,54 +76,39 @@ class ResourceAdd extends Component {
       <div>
         <h3>Add Your Own Resource!</h3>
         <form onSubmit={this.addResource}>
-          <TextField
-            size="small"
-            variant="outlined"
-            color="secondary"
+          <input
             placeholder="Insert Name"
             type="text"
             value={this.state.newResource.name}
             onChange={this.handleNameChange}
           />
-          <TextField
-            size="small"
-            variant="outlined"
-            color="secondary"
+          <input
             placeholder="Insert Hours"
             type="text"
             value={this.state.newResource.hours}
             onChange={this.handleHoursChange}
           />
-          <TextField
-            size="small"
-            variant="outlined"
-            color="secondary"
+          <input
             placeholder="Insert Number"
             type="text"
             value={this.state.newResource.number}
             onChange={this.handleNumberChange}
           />
-          <TextField
-            size="small"
-            variant="outlined"
-            color="secondary"
+          <input
             placeholder="Insert Address"
             type="text"
             value={this.state.newResource.address}
             onChange={this.handleAddressChange}
           />
-          <TextField
-            size="small"
-            variant="outlined"
-            color="secondary"
+          <input
             placeholder="Insert Information"
             type="text"
             value={this.state.newResource.information}
             onChange={this.handleInfoChange}
           />
-          <Button size="small" variant="contained" color="secondary">
+          <button size="small" variant="contained" color="secondary">
             Add Resource
-          </Button>
+          </button>
         </form>
       </div>
     );

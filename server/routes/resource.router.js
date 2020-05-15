@@ -53,7 +53,7 @@ router.post("/", (req, res) => {
     });
 });
 
-router.delete("/", (req, res) => {
+router.delete("/delete/:id", (req, res) => {
   console.log(req.params.id);
   const itemId = req.params.id;
   const queryText = `DELETE FROM "resources" WHERE "id" = $1;`;
