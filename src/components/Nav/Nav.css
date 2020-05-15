@@ -1,6 +1,5 @@
 .header-logo {
   display: flex;
-
   margin-left: auto;
   margin-right: auto;
   height: 65%;
@@ -14,7 +13,7 @@
 }
 
 .nav {
-  /* overflow: hidden; */
+  overflow: hidden;
   background-color: #a6a6a6;
   height: 150px;
 }
@@ -35,10 +34,20 @@
   cursor: pointer;
 }
 
-.nav-link:hover {
-  background-color: #dbdbdb;
-}
-
 .nav-right {
   float: right;
+  text-decoration: none;
+}
+
+.log-out-btn {
+  background: none !important;
+  border: none;
+  padding: 0 !important;
+  /*optional*/
+  font-family: Georgia, "Times New Roman", Times, serif;
+  /*input has OS specific font-family*/
+  color: #40231c;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 15px;
 }

@@ -7,7 +7,7 @@ import mapStoreToProps from "../../redux/mapStoreToProps";
 
 const Nav = (props) => {
   let loginLinkData = {
-    path: "/home",
+    path: "/login",
     text: "Login / Register",
   };
 
@@ -18,7 +18,6 @@ const Nav = (props) => {
 
   return (
     <div className="nav">
-      <div></div>
                            
       <Link className="head-link" to="/home">
         <img
@@ -39,13 +38,12 @@ const Nav = (props) => {
             <Link className="nav-link" to="/resources">
                         Resources               
             </Link>
-                          
-            <LogOutButton />
-                        
+                 <LogOutButton className="log-out-btn"></LogOutButton> 
+                                  
           </>
         )}
       </div>
-                 
+              
     </div>
   );
 };
