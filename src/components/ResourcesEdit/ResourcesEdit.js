@@ -86,37 +86,46 @@ class ResourcesEdit extends Component {
         <h3 className="edit-head">Edit This Resource</h3>
 
         <br />
-
-        <input
-          className="input-field"
-          placeholder="Insert New Name"
-          onChange={this.changeDetails("name")}
-          type="text"
-        />
-        <input
-          className="input-field"
-          placeholder="Insert New Hours"
-          onChange={this.changeDetails("hours")}
-          type="text"
-        />
-        <input
-          className="input-field"
-          placeholder="Insert New Number"
-          onChange={this.changeDetails("number")}
-          type="text"
-        />
-        <input
-          className="input-field"
-          placeholder="Insert New Address"
-          onChange={this.changeDetails("address")}
-          type="text"
-        />
-        <input
-          className="input-field"
-          placeholder="Insert New Information"
-          onChange={this.changeDetails("information")}
-          type="text"
-        />
+        <div align="center">
+          <input
+            className="input-field"
+            placeholder="Insert New Name"
+            onChange={this.changeDetails("name")}
+            type="text"
+          />
+        </div>
+        <div align="center">
+          <input
+            className="input-field"
+            placeholder="Insert New Hours"
+            onChange={this.changeDetails("hours")}
+            type="text"
+          />
+        </div>
+        <div align="center">
+          <input
+            className="input-field"
+            placeholder="Insert New Number"
+            onChange={this.changeDetails("number")}
+            type="text"
+          />
+        </div>
+        <div align="center">
+          <input
+            className="input-field"
+            placeholder="Insert New Address"
+            onChange={this.changeDetails("address")}
+            type="text"
+          />
+        </div>
+        <div align="center">
+          <input
+            className="input-field"
+            placeholder="Insert New Information"
+            onChange={this.changeDetails("information")}
+            type="text"
+          />
+        </div>
         <br />
 
         <div>
