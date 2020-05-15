@@ -43,7 +43,6 @@
   font-size: 12px;
   float: right;
   margin-right: 50px;
-  margin-top: 10px;
 }
 
 .bg-img-edit {
@@ -53,5 +52,5 @@
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
-  padding: 100px;
+  padding: 90px;
 }

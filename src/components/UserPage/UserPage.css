@@ -1,8 +1,10 @@
-.grid {
-  display: grid;
-  grid-template-columns: repeat(8, 1fr);
-  grid-template-rows: repeat(8, 5vw);
-  grid-gap: 15px;
+.welcome-user {
+  text-align: center;
+  color: #40231c;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-style: italic;
+  font-variant: small-caps;
+  font-weight: bold;
 }
 
 .anml-pix {
@@ -11,11 +13,28 @@
   object-fit: cover;
   display: block;
   margin-left: 65px;
+  box-shadow: 10px 10px 5px grey;
+}
+
+.animal-desc {
+  text-align: center;
+  margin-left: 30%;
+}
+
+.head-desc {
+  text-align: center;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(8, 5vw);
+  grid-gap: 15px;
 }
 
 .image-one {
   width: 25%;
-  height: 25%;
+  height: 20%;
   grid-column-start: 1;
   grid-column-end: 3;
   grid-row-start: 1;
@@ -24,7 +43,7 @@
 
 .image-two {
   width: 25%;
-  height: 25%;
+  height: 20%;
   grid-column-start: 3;
   grid-column-end: 5;
   grid-row-start: 1;
@@ -33,15 +52,9 @@
 
 .image-three {
   width: 25%;
-  height: 25%;
+  height: 20%;
   grid-column-start: 5;
   grid-column-end: 9;
   grid-row-start: 1;
   grid-row-end: 6;
-}
-
-.log-out {
-  float: right;
-  margin-right: 50px;
-  margin-top: 10px;
 }

@@ -15,8 +15,10 @@ const UserPage = (props) => {
 
   return (
     <div>
-      <h1 id="welcome">Welcome, {props.store.user.username}!</h1>
-      <p>
+      <h1 className="welcome-user" id="welcome">
+        Welcome, {props.store.user.username}!
+      </h1>
+      <p className="head-desc">
         Click on a photo below to read more about the wildlife rehabilitation
         has saved! Or use the navigation bar to go to the resource list!
       </p>
@@ -28,6 +30,9 @@ const UserPage = (props) => {
             alt="Owl"
             src="../images/WR1.jpg"
           ></img>
+          <p className="animal-desc">
+            Barred Owl Hit By A Car, Recovers From Injuries
+          </p>
         </figure>
         <figure className="image-two">
           <img
@@ -36,6 +41,7 @@ const UserPage = (props) => {
             alt="Porcupine"
             src="../images/WR2.jpg"
           ></img>
+          <p className="animal-desc">A Porcupine With Mange</p>
         </figure>
         <figure className="image-three">
           <img
@@ -44,10 +50,9 @@ const UserPage = (props) => {
             alt="Opossums"
             src="../images/WR3.jpg"
           ></img>
+          <p className="animal-desc">Orphaned Opossums Get A Fostered</p>
         </figure>
       </div>
-
-      <LogOutButton className="log-out" />
     </div>
   );
 };
