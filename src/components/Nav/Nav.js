@@ -28,15 +28,16 @@ const Nav = (props) => {
                   
       </Link>
       <div className="nav-right">
-                  
+                
         {props.store.user.id && (
           <>
-                          
-            <Link className="nav-link" to="/resources">
-                        Resources               
-            </Link>
+              
             <Link className="nav-link" to={loginLinkData.path}>
               {loginLinkData.text}  
+            </Link>
+                        
+            <Link className="nav-link" to="/resources">
+                        Resources               
             </Link>
                  <LogOutButton className="log-out-btn"></LogOutButton> 
                                   

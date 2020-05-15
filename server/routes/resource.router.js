@@ -41,6 +41,7 @@ router.post("/", (req, res) => {
     newResource.hours,
     newResource.number,
     newResource.address,
+    newResource.information,
   ];
   pool
     .query(queryText, queryValues)
@@ -48,7 +49,7 @@ router.post("/", (req, res) => {
       res.sendStatus(201);
     })
     .catch((err) => {
-      console.log("Error completing SELECT resource query", err);
+      console.log("Error completing POST resource query", err);
       res.sendStatus(500);
     });
 });

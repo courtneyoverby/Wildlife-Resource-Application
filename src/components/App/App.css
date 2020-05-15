@@ -33,6 +33,7 @@ input {
   outline: 0;
   cursor: pointer;
   font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 12px;
 }
 
 .log-in:hover,
