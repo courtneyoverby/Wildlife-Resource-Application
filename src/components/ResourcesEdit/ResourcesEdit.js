@@ -33,7 +33,7 @@ class ResourcesEdit extends Component {
   clickSaveDetails = (event) => {
     swal({
       title: "Ready?",
-      text: "Once saved, your resource will be added to your list! ",
+      text: "Once saved, your resource will be added to your list!",
       icon: "success",
       buttons: true,
       dangerMode: false,

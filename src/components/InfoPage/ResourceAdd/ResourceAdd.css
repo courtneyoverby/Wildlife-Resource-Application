@@ -2,14 +2,14 @@
   border: 3px solid white;
 }
 
-.edit-head {
+.add-head {
   font-family: Georgia, "Times New Roman", Times, serif;
   font-size: 25px;
   text-align: center;
   color: white;
 }
 
-.input-field {
+.input-field2 {
   border: 4px solid #a6a6a6;
   border-radius: 5px;
   -webkit-transition: width 0.5s ease-in-out;
@@ -25,13 +25,14 @@
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
+  transition-property: width;
 }
 
 .input-field:focus {
   width: 25%;
 }
 
-.saveBtn {
+.addBtn {
   background-color: #40231c;
   border-radius: 4px;
   color: #f8f8f8;
@@ -45,9 +46,9 @@
   margin-right: 50px;
 }
 
-.bg-img-edit {
+.bg-img-add {
   background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-    url("/images/WS.jpg");
+    url("/images/stream.jpg");
   background-position: right left;
   background-repeat: no-repeat;
   background-attachment: fixed;
