@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
-import { Button, TextField } from "@material-ui/core";
+import swal from "sweetalert";
+import "./ResourceAdd.css";
 
 class ResourceAdd extends Component {
   state = {
@@ -65,66 +66,88 @@ class ResourceAdd extends Component {
   };
 
   addResource = (event) => {
-    event.preventDefault();
-    this.props.dispatch({
-      type: "ADD_RESOURCE",
-      payload: this.state.newResource,
+    swal({
+      title: "Ready?",
+      text: "Once your ready, your resource will be added to your list!",
+      icon: "success",
+      buttons: true,
+      dangerMode: false,
+      closeOnClickOutside: true,
+    }).then((willAdd) => {
+      if (willAdd) {
+        event.preventDefault();
+        this.props.dispatch({
+          type: "ADD_RESOURCE",
+          payload: this.state.newResource,
+        });
+        swal("You've just added a resource!", {
+          icon: "success",
+        });
+      } else {
+        swal("You changed your mind about adding a resource!");
+      }
     });
+    this.props.history.push(`/resources`);
   };
 
   render() {
     return (
-      <div>
-        <h3>Add Your Own Resource!</h3>
-        <form onSubmit={this.addResource}>
-          <TextField
+      <div className="bg-img-add">
+        <h3 className="add-head">Add Your Own Resource!</h3>
+        <form className="columns2" onSubmit={this.addResource}>
+          <div align="center">
+            <input
+              className="input-field2"
+              placeholder="Insert Name"
+              type="text"
+              value={this.state.newResource.name}
+              onChange={this.handleNameChange}
+            />
+          </div>
+          <div align="center">
+            <input
+              className="input-field2"
+              placeholder="Insert Hours"
+              type="text"
+              value={this.state.newResource.hours}
+              onChange={this.handleHoursChange}
+            />
+          </div>
+          <div align="center">
+            <input
+              className="input-field2"
+              placeholder="Insert Number"
+              type="text"
+              value={this.state.newResource.number}
+              onChange={this.handleNumberChange}
+            />
+          </div>
+          <div align="center">
+            <input
+              className="input-field2"
+              placeholder="Insert Address"
+              type="text"
+              value={this.state.newResource.address}
+              onChange={this.handleAddressChange}
+            />
+          </div>
+          <div align="center">
+            <input
+              className="input-field2"
+              placeholder="Insert Information"
+              type="text"
+              value={this.state.newResource.information}
+              onChange={this.handleInfoChange}
+            />
+          </div>
+          <button
+            className="addBtn"
             size="small"
-            variant="outlined"
+            variant="contained"
             color="secondary"
-            placeholder="Insert Name"
-            type="text"
-            value={this.state.newResource.name}
-            onChange={this.handleNameChange}
-          />
-          <TextField
-            size="small"
-            variant="outlined"
-            color="secondary"
-            placeholder="Insert Hours"
-            type="text"
-            value={this.state.newResource.hours}
-            onChange={this.handleHoursChange}
-          />
-          <TextField
-            size="small"
-            variant="outlined"
-            color="secondary"
-            placeholder="Insert Number"
-            type="text"
-            value={this.state.newResource.number}
-            onChange={this.handleNumberChange}
-          />
-          <TextField
-            size="small"
-            variant="outlined"
-            color="secondary"
-            placeholder="Insert Address"
-            type="text"
-            value={this.state.newResource.address}
-            onChange={this.handleAddressChange}
-          />
-          <TextField
-            size="small"
-            variant="outlined"
-            color="secondary"
-            placeholder="Insert Information"
-            type="text"
-            value={this.state.newResource.information}
-            onChange={this.handleInfoChange}
-          />
-          <Button size="small" variant="contained" color="secondary">
+          >
             Add Resource
-          </Button>
+          </button>
         </form>
       </div>
     );

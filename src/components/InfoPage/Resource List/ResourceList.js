@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 import ResourceItem from "../ResourceItem/ResourceItem";
+import "./ResourceList.css";
 
 class ResourceList extends Component {
   componentDidMount() {
@@ -13,13 +14,20 @@ class ResourceList extends Component {
     };
     console.log(this.props.store.resources);
     return (
-      <div>
-        <h4>Your Current List of Resources</h4>
-        <p>Click a resource name to read more, or add a new resource!</p>
-        <button onClick={handleClick("/add-resource")}> Add Resource </button>
+      <div className="bg-img-list">
+        <h2 className="list-header">Your Current List of Resources</h2>
+
+        <h4 className="list-desc">
+          Click a resource name to read more, or add a new resource!
+        </h4>
+
         {this.props.store.resources.resourceReducer.map((resources) => {
           return <ResourceItem key={resources.id} resources={resources} />;
         })}
+
+        <button className="list-add" onClick={handleClick("/add-resource")}>
+          Add Resource
+        </button>
       </div>
     );
   }

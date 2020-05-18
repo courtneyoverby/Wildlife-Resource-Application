@@ -1,0 +1,51 @@
+h3 {
+  font-style: italic;
+  font-variant: small-caps;
+  color: whitesmoke;
+  text-align: center;
+  text-decoration: underline;
+}
+
+.bg-img-ss {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url("/images/foliage2.jpg");
+  background-position: right left;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  padding: 60px;
+}
+
+.ss-img {
+  height: 450px;
+  width: 400px;
+  margin-top: 25px;
+  margin-left: 200px;
+  -webkit-box-shadow: 5px -4px 5px 0px rgb(109, 106, 106);
+  float: left;
+}
+
+.ss-desc {
+  text-align: left;
+  float: right;
+  color: whitesmoke;
+  margin-right: 150px;
+}
+
+.columns {
+  columns: 400px 2;
+}
+
+.go-back-btn {
+  background-color: #40231c;
+  border-radius: 4px;
+  color: #f8f8f8;
+  min-height: 50px;
+  min-width: 100px;
+  outline: 0;
+  cursor: pointer;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 12px;
+  position: absolute;
+  right: 20px;
+}

@@ -15,12 +15,12 @@ class LandingPage extends Component {
 
   render() {
     return (
-      <div className="container">
-        <h2>{this.state.heading}</h2>
+      <div className="container bg-img">
+        <h2 className="land-head">{this.state.heading}</h2>
 
         <div className="grid">
           <div className="grid-col grid-col_8">
-            <p>
+            <p className="landing-p">
               Rehabilitating wildlife isn't easy. Why should we take the time,
               energy, and money to provide for wild animals that have become
               sick or injured? Helping animals in need promotes ecosystem
@@ -28,7 +28,7 @@ class LandingPage extends Component {
               they can return to their ecosystems and continue their role.
             </p>
 
-            <p>
+            <p className="landing-p">
               Because wild animals don't have owners like our pets do, they
               belong to the state they live in. Wildlife rehabilitation centers
               are organizations that the state and federal governments have
@@ -36,7 +36,7 @@ class LandingPage extends Component {
               becomes sick or injured.
             </p>
 
-            <p>
+            <p className="landing-p">
               These organizations also aid in disease monitoring! They are
               normally the first ones to learn about disease outbreaks, which is
               very important for disease such as rabies or West Nile Virus- both
@@ -45,7 +45,7 @@ class LandingPage extends Component {
             </p>
           </div>
           <div className="grid-col grid-col_4">
-            <h3>Already a Member?</h3>
+            <h3 className="member-txt">Already a Member?</h3>
             <button className="btn btn_sizeFull" onClick={this.onLogin}>
               Login
             </button>

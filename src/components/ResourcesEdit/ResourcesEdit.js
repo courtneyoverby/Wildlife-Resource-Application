@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import swal from "sweetalert";
-import { Button, TextField } from "@material-ui/core";
+import "./ResourceEdit.css";
 
 class ResourcesEdit extends Component {
   constructor(props) {
     super(props);
 
-    this.setState = {
+    this.state = {
       name: "",
       hours: "",
       number: "",
@@ -33,7 +33,7 @@ class ResourcesEdit extends Component {
   clickSaveDetails = (event) => {
     swal({
       title: "Ready?",
-      text: "Once saved, your resource will be added to your list! ",
+      text: "Once saved, your resource will be added to your list!",
       icon: "success",
       buttons: true,
       dangerMode: false,
@@ -82,61 +82,57 @@ class ResourcesEdit extends Component {
 
   render() {
     return (
-      <div>
-        <h3>Edit This Resource</h3>
+      <div className="bg-img-edit">
+        <h3 className="edit-head">Edit This Resource</h3>
+
         <br />
-        <div>
-          <Button
-            className="saveBtn"
-            size="small"
-            variant="contained"
-            color="secondary"
-            onClick={this.clickSaveDetails}
-          >
-            Save
-          </Button>
+        <div align="center">
+          <input
+            className="input-field"
+            placeholder="Insert New Name"
+            onChange={this.changeDetails("name")}
+            type="text"
+          />
+        </div>
+        <div align="center">
+          <input
+            className="input-field"
+            placeholder="Insert New Hours"
+            onChange={this.changeDetails("hours")}
+            type="text"
+          />
+        </div>
+        <div align="center">
+          <input
+            className="input-field"
+            placeholder="Insert New Number"
+            onChange={this.changeDetails("number")}
+            type="text"
+          />
+        </div>
+        <div align="center">
+          <input
+            className="input-field"
+            placeholder="Insert New Address"
+            onChange={this.changeDetails("address")}
+            type="text"
+          />
+        </div>
+        <div align="center">
+          <input
+            className="input-field"
+            placeholder="Insert New Information"
+            onChange={this.changeDetails("information")}
+            type="text"
+          />
         </div>
         <br />
-        <TextField
-          size="small"
-          variant="outlined"
-          color="secondary"
-          placeholder="Insert New Name"
-          onChange={this.changeDetails("name")}
-          type="text"
-        />
-        <TextField
-          size="small"
-          variant="outlined"
-          color="secondary"
-          placeholder="Insert New Hours"
-          onChange={this.changeDetails("hours")}
-          type="text"
-        />
-        <TextField
-          size="small"
-          variant="outlined"
-          color="secondary"
-          placeholder="Insert New Number"
-          onChange={this.changeDetails("number")}
-          type="text"
-        />
-        <TextField
-          size="small"
-          variant="outlined"
-          color="secondary"
-          placeholder="Insert New Address"
-          onChange={this.changeDetails("address")}
-          type="text"
-        />
-        <TextField
-          size="small"
-          variant="outlined"
-          color="secondary"
-          placeholder="Insert New Information"
-          onChange={this.changeDetails("information")}
-          type="text"
-        />
+
+        <div>
+          <button className="saveBtn" onClick={this.clickSaveDetails}>
+            Save
+          </button>
+        </div>
       </div>
     );
   }
