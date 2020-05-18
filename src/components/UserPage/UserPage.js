@@ -20,37 +20,50 @@ const UserPage = (props) => {
       </h1>
       <p className="head-desc">
         Click on a photo below to read more about the wildlife rehabilitation
-        has saved! Or use the navigation bar to go to the resource list!
+        has saved!
+      </p>
+      <p className="head-desc">
+        Or use the navigation bar to go to the resource list!
       </p>
       <div className="grid">
-        <figure className="image-one">
+        <figure className="images">
           <img
             className="anml-pix"
             onClick={handleClick("/owl-success")}
             alt="Owl"
             src="../images/WR1.jpg"
           ></img>
-          <p className="animal-desc">
-            Barred Owl Hit By A Car, Recovers From Injuries
-          </p>
+          <figcaption>
+            <h2>Barred Owl Hit By A Car,</h2>
+            <p> Recovers From Injuries</p>
+            <a href="#"></a>
+          </figcaption>
         </figure>
-        <figure className="image-two">
+        <figure className="images">
           <img
             className="anml-pix"
             onClick={handleClick("/porcupine-success")}
             alt="Porcupine"
             src="../images/WR2.jpg"
           ></img>
-          <p className="animal-desc">A Porcupine With Mange</p>
+          <figcaption>
+            <h2>A Porcupine With Mange</h2>
+            <p> Treated And Set Free.</p>
+            <a href="#"></a>
+          </figcaption>
         </figure>
-        <figure className="image-three">
+        <figure className="images">
           <img
             className="anml-pix"
             onClick={handleClick("/opossum-success")}
             alt="Opossums"
             src="../images/WR3.jpg"
           ></img>
-          <p className="animal-desc">Orphaned Opossums Get A Fostered</p>
+          <figcaption>
+            <h2>Orphaned Opossums Get A Foster Family,</h2>
+            <p>Recover And Get Released!!</p>
+            <a href="#"></a>
+          </figcaption>
         </figure>
       </div>
     </div>
