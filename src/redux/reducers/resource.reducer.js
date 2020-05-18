@@ -1,3 +1,5 @@
+import { combineReducers } from "redux";
+
 const resourceReducer = (state = [], action) => {
   switch (action.type) {
     case "SET_RESOURCES":
@@ -7,4 +9,16 @@ const resourceReducer = (state = [], action) => {
   }
 };
 
-export default resourceReducer;
+const detailsReducer = (state = {}, action) => {
+  switch (action.type) {
+    case "SET_DETAILS":
+      return action.payload;
+    default:
+      return state;
+  }
+};
+
+export default combineReducers({
+  resourceReducer,
+  detailsReducer,
+});

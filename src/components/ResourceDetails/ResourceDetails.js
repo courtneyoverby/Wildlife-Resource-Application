@@ -16,9 +16,11 @@ class ResourceDetails extends Component {
 
   render() {
     const id = Number(this.props.match.params.id);
-    const filteredResource = this.props.store.resources.filter((resources) => {
-      return resources.id === id;
-    });
+    const filteredResource = this.props.store.resources.resourceReducer.filter(
+      (resources) => {
+        return resources.id === id;
+      }
+    );
     return (
       <div>
         {filteredResource.map((details) => {
