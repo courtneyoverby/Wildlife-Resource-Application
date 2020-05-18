@@ -5,6 +5,7 @@
   font-style: italic;
   font-variant: small-caps;
   font-weight: bold;
+  text-decoration: underline;
 }
 
 figure.images {
@@ -21,7 +22,7 @@ figure.images {
   width: 50%;
   background: #000000;
   text-align: left;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  -webkit-box-shadow: 5px 5px 10px rgb(109, 106, 106);
 }
 figure.images * {
   -webkit-box-sizing: border-box;
@@ -122,11 +123,6 @@ figure.images:hover figcaption::before {
   margin-left: 30%;
 }
 
-.head-desc {
-  text-align: center;
-  color: #ffffff;
-}
-
 .bg-img-user {
   background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
     url("/Images/foliage3.jpg");
@@ -134,18 +130,12 @@ figure.images:hover figcaption::before {
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
-  height: 500px;
+  height: 600px;
   padding: 20px;
 }
 
-.read-more1 {
+.head-description {
+  color: whitesmoke;
   text-align: center;
-}
-
-.read-more2 {
-  text-align: left;
-}
-
-.read-more3 {
-  text-align: right;
+  padding-top: 10px;
 }

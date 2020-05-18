@@ -13,19 +13,12 @@ const UserPage = (props) => {
   };
 
   return (
-    <div>
-      <div className="container bg-img-user">
+    <div className="container bg-img-user">
+      <div>
         <h1 className="welcome-user" id="welcome">
           Welcome, {props.store.user.username}!
         </h1>
 
-        <p className="head-desc">
-          Click on a photo below to read more about the wildlife rehabilitation
-          has saved!
-        </p>
-        <p className="head-desc">
-          Or use the navigation bar to go to the resource list!
-        </p>
         <div className="grid">
           <figure onClick={handleClick("/owl-success")} className="images">
             <img className="anml-pix" alt="Owl" src="../images/WR1.jpg"></img>
@@ -64,6 +57,14 @@ const UserPage = (props) => {
           </figure>
         </div>
       </div>
+
+      <p className="head-description">
+        Click on a photo above to read more about the wildlife rehabilitation
+        has saved!
+      </p>
+      <p className="head-description">
+        Or use the navigation bar to go to the resource list!
+      </p>
     </div>
   );
 };
