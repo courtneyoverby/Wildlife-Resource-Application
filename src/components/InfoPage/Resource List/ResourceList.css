@@ -1,0 +1,43 @@
+.list-header {
+  text-align: center;
+  color: #40231c;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-style: italic;
+  font-variant: small-caps;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.list-desc {
+  color: #40231c;
+  text-align: center;
+  padding-top: 10px;
+}
+
+.bg-img-list {
+  background-image: linear-gradient(
+      rgba(181, 181, 181, 0.7),
+      rgba(181, 181, 181, 0.7)
+    ),
+    url("/Images/wolves.jpg");
+  background-position: right left;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  padding: 90px;
+  height: auto;
+}
+
+.list-add {
+  background-color: #f8f8f8;
+  border-radius: 4px;
+  color: #40231c;
+  min-height: 50px;
+  min-width: 100px;
+  outline: 5;
+  outline-color: #40231c;
+  cursor: pointer;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 12px;
+  float: right;
+}

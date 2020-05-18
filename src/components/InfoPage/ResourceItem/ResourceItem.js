@@ -2,7 +2,8 @@ import React, { Component } from "react";
 import swal from "sweetalert";
 import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
-import { Grid, Paper, IconButton, Container } from "@material-ui/core/";
+import { Grid, IconButton, Container } from "@material-ui/core/";
+import "./ResourceItem.css";
 
 import DeleteIcon from "@material-ui/icons/Delete";
 
@@ -36,25 +37,28 @@ class ResourceItem extends Component {
   render() {
     return (
       <div>
-        <Container maxWidth="sm">
-          <Grid item xs>
-            <Paper
-              style={{
-                backgroundColor: "#BFAE9F",
-                color: "black",
-              }}
-            ></Paper>
-
-            <ul>
-              <p>{this.props.resources.pic}</p>
-              <h4 onClick={this.onClick(this.props.resources.id)}>
+        <Container maxWidth="xs">
+          <Grid item xl>
+            <li>
+              <il
+                href="#"
+                className="list-names"
+                align="center"
+                onClick={this.onClick(this.props.resources.id)}
+              >
                 {this.props.resources.name}
-              </h4>
-              <span>{this.props.resources.address}</span>
-              <IconButton aria-label="delete" onClick={this.onDeleteClick}>
-                <DeleteIcon />{" "}
-              </IconButton>
-            </ul>
+                <p className="list-address">
+                  - {this.props.resources.address}
+                  <IconButton
+                    className="item-delete"
+                    aria-label="delete"
+                    onClick={this.onDeleteClick}
+                  >
+                    <DeleteIcon />{" "}
+                  </IconButton>
+                </p>
+              </il>
+            </li>
           </Grid>
         </Container>
       </div>

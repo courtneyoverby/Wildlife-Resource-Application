@@ -68,7 +68,7 @@ class ResourceAdd extends Component {
   addResource = (event) => {
     swal({
       title: "Ready?",
-      text: "Once added, your resource will be added to your list!",
+      text: "Once your ready, your resource will be added to your list!",
       icon: "success",
       buttons: true,
       dangerMode: false,
