@@ -1,6 +1,6 @@
 .welcome-user {
   text-align: center;
-  color: #40231c;
+  color: #ffffff;
   font-family: Georgia, "Times New Roman", Times, serif;
   font-style: italic;
   font-variant: small-caps;
@@ -12,11 +12,13 @@ figure.images {
   color: #fff;
   position: relative;
   overflow: hidden;
-  margin: 85px;
+  margin-right: 10px;
+  margin-left: 45px;
+  /* margin: 20px; */
   min-width: 220px;
-  max-width: 310px;
-  max-height: 300px;
-  width: 100%;
+  max-width: 400px;
+  max-height: 310px;
+  width: 50%;
   background: #000000;
   text-align: left;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -36,7 +38,7 @@ figure.images figcaption {
   position: absolute;
   bottom: 0;
   left: 0;
-  padding: 30px 3em;
+  padding: 10px 3em;
   width: 100%;
   height: 100%;
 }
@@ -82,7 +84,7 @@ figure.images p {
   -webkit-transition-delay: 0s;
   transition-delay: 0s;
 }
-figure.images a {
+figure.images b {
   left: 0;
   right: 0;
   top: 0;
@@ -122,38 +124,28 @@ figure.images:hover figcaption::before {
 
 .head-desc {
   text-align: center;
+  color: #ffffff;
 }
 
-.grid {
-  display: grid;
-  grid-template-columns: repeat(8, 1fr);
-  grid-template-rows: repeat(8, 5vw);
-  grid-gap: 15px;
+.bg-img-user {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url("/Images/foliage3.jpg");
+  background-position: right left;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  height: 500px;
+  padding: 20px;
 }
 
-.image-one {
-  width: 25%;
-  height: 20%;
-  grid-column-start: 1;
-  grid-column-end: 3;
-  grid-row-start: 1;
-  grid-row-end: 3;
+.read-more1 {
+  text-align: center;
 }
 
-.image-two {
-  width: 25%;
-  height: 20%;
-  grid-column-start: 3;
-  grid-column-end: 5;
-  grid-row-start: 1;
-  grid-row-end: 3;
+.read-more2 {
+  text-align: left;
 }
 
-.image-three {
-  width: 25%;
-  height: 20%;
-  grid-column-start: 5;
-  grid-column-end: 9;
-  grid-row-start: 1;
-  grid-row-end: 6;
+.read-more3 {
+  text-align: right;
 }
