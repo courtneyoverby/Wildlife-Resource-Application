@@ -1,0 +1,55 @@
+.bg-img-details {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url("/images/fox.jpg");
+  background-position: right left;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  padding: 70px;
+  height: 550px;
+}
+
+.detail-name {
+  font-size: 40px;
+  text-align: center;
+  color: #ffffff;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-style: italic;
+  font-variant: small-caps;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.details {
+  margin-top: 300px;
+  color: whitesmoke;
+  text-align: left;
+  padding-top: 10px;
+}
+
+.details-delete {
+  background-color: #40231c;
+  border-radius: 4px;
+  color: #f8f8f8;
+  min-height: 50px;
+  min-width: 100px;
+  outline: 0;
+  cursor: pointer;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 12px;
+  position: absolute;
+  right: 20px;
+}
+
+.details-edit {
+  background-color: #40231c;
+  border-radius: 4px;
+  color: #f8f8f8;
+  min-height: 50px;
+  min-width: 100px;
+  outline: 0;
+  cursor: pointer;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 12px;
+  right: 20px;
+}

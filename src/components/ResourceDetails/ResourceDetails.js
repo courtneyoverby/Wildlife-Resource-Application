@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import "./ResourceDetails.css";
 
 class ResourceDetails extends Component {
   componentDidMount() {
@@ -25,13 +26,21 @@ class ResourceDetails extends Component {
       <div>
         {filteredResource.map((details) => {
           return (
-            <div key={details.id}>
-              <h4>{details.name}</h4>
-              <p>{details.number}</p>
-              <p>{details.hours}</p>
-              <p>{details.information}</p>
-              <button onClick={this.editOnClick}>Edit</button>
-              <button onClick={this.backOnClick}>Go Back</button>
+            <div className="bg-img-details" key={details.id}>
+              <h4 className="detail-name">{details.name}</h4>
+              <div className="details">
+                <p>{details.number}</p>
+                <p>{details.hours}</p>
+                <p>{details.information}</p>
+              </div>
+              <div>
+                <button className="details-edit" onClick={this.editOnClick}>
+                  Edit
+                </button>
+                <button className="details-delete" onClick={this.backOnClick}>
+                  Go Back
+                </button>
+              </div>
             </div>
           );
         })}
