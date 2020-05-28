@@ -11,7 +11,7 @@ class SuccessOwl extends Component {
       <div className="bg-img-ss">
         <h3>Barred Owl Hit By A Car, Recovers From Injuries</h3>
         <div className=" columns">
-          <img className="ss-img" alt="Owl" src="../images/WR1.jpg"></img>
+          <img className="ss-img" alt="Owl" src="../Images/WR1.jpg"></img>
           <p className="ss-desc">
             In January of 2020, Woodford Cedar Run Wildlife Refuge in New Jersey
             received a Barred Owl that was in awful shape. Before being rescued,

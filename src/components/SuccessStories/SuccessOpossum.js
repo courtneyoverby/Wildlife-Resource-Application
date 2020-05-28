@@ -14,7 +14,7 @@ class SuccessOpossum extends Component {
           Orphaned Opossums Get A Foster Family, Recover And Get Released!
         </h3>
         <div className=" columns">
-          <img className="ss-img" alt="Opossums" src="../images/WR3.jpg"></img>
+          <img className="ss-img" alt="Opossums" src="../Images/WR3.jpg"></img>
           <p className="ss-desc">
             All Things Wild Rehabilitation in Texas were introduced to the baby
             opossums when their mother was hit and killed by a car. Named Sting

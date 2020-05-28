@@ -10,7 +10,7 @@ class SuccessPorcupine extends Component {
       <div className="bg-img-ss ">
         <h3>A Porcupine With Mange Treated And Set Free. </h3>
         <div className=" columns">
-          <img className="ss-img" alt="Porcupine" src="../images/WR2.jpg"></img>
+          <img className="ss-img" alt="Porcupine" src="../Images/WR2.jpg"></img>
 
           <p className="ss-desc">
             As a one year old wildlife center, All Things Wild Rehabilitation in
