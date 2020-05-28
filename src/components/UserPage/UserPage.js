@@ -21,7 +21,7 @@ const UserPage = (props) => {
 
         <div className="grid">
           <figure onClick={handleClick("/owl-success")} className="images">
-            <img className="anml-pix" alt="Owl" src="../images/WR1.jpg"></img>
+            <img className="anml-pix" alt="Owl" src="../Images/WR1.jpg"></img>
             <figcaption>
               <h2>Barred Owl</h2>
               <p> Hit By A Car, Recovers From Injuries</p>
@@ -35,7 +35,7 @@ const UserPage = (props) => {
             <img
               className="anml-pix"
               alt="Porcupine"
-              src="../images/WR2.jpg"
+              src="../Images/WR2.jpg"
             ></img>
             <figcaption>
               <h2>A Porcupine</h2>
@@ -47,7 +47,7 @@ const UserPage = (props) => {
             <img
               className="anml-pix"
               alt="Opossums"
-              src="../images/WR3.jpg"
+              src="../Images/WR3.jpg"
             ></img>
             <figcaption>
               <h2>Orphaned Opossums</h2>
