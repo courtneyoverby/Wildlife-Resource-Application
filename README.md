@@ -33,9 +33,12 @@ To see the fully functional site, please visit:
 
 
 ## Built With
-React,
-Redux-sagas,
+React.js,
+Redux-Saga,
+Express,
+Node.js,
 PostgresQL,
+HTML,
 CSS,
 Material-UI,
 and Sweet Alerts.
