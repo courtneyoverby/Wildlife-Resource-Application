@@ -3,7 +3,7 @@
 ## Description
 _Duration: 2 Week Sprint_
 
-Wildlife Rescue Application is a rehabilitation app that uses Missouri and Kansas as a test-market. The application allows users to register for an account, which allows them to use the application's Resource feature, add, edit, and delete the wildlife rehabilitation centers, and allows users to read read success stories.
+Wildlife Rescue Application (https://calm-castle-91238.herokuapp.com/) is a rehabilitation app that uses Missouri and Kansas as a test-market. The application allows users to register for an account, which allows them to use the application's Resource feature, add, edit, and delete the wildlife rehabilitation centers, and allows users to read read success stories.
 
 The edit feature allows the user to add any extra information or experiences with the resources on their list.
 
