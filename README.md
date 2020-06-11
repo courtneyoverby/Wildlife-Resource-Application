@@ -9,9 +9,6 @@ The edit feature allows the user to add any extra information or experiences wit
 
 To see the fully functional site, please visit: 
 
-## Screen Shot
-
-
 ### Prerequisites
 - [Node.js](https://nodejs.org/en/)
 
