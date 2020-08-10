@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import LogOutButton from "../LogOutButton/LogOutButton";
+import { CssBaseline } from "@material-ui/core";
 import "./Nav.css";
 import mapStoreToProps from "../../redux/mapStoreToProps";
 
@@ -18,33 +19,37 @@ const Nav = (props) => {
 
   return (
     <div className="nav">
-                           
-      <Link className="head-link" to="/home">
-        <img
-          className="header-logo"
-          src="../Images/Wildlife.jpg"
-          alt="WRA Logo"
-        ></img>
-                  
-      </Link>
-      <div className="nav-right">
-                
-        {props.store.user.id && (
-          <>
-              
-            <Link className="nav-link" to={loginLinkData.path}>
-              {loginLinkData.text}  
-            </Link>
-                        
-            <Link className="nav-link" to="/resources">
-                        Resources               
-            </Link>
-                 <LogOutButton className="log-out-btn"></LogOutButton> 
-                                  
-          </>
-        )}
-      </div>
-              
+         {" "}
+      <CssBaseline>
+                        
+        <Link className="head-link" to="/home">
+          <img
+            className="header-logo"
+            src="../Images/Wildlife.jpg"
+            alt="WRA Logo"
+          ></img>
+                    
+        </Link>
+        <div className="nav-right">
+                  
+          {props.store.user.id && (
+            <>
+                
+              <Link className="nav-link" to={loginLinkData.path}>
+                {loginLinkData.text}  
+              </Link>
+                          
+              <Link className="nav-link" to="/resources">
+                          Resources               
+              </Link>
+                   <LogOutButton className="log-out-btn"></LogOutButton> 
+                                    
+            </>
+          )}
+        </div>
+           
+      </CssBaseline>
+            
     </div>
   );
 };

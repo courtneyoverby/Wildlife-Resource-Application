@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { CssBaseline } from "@material-ui/core";
 import "./ResourceDetails.css";
 
 class ResourceDetails extends Component {
@@ -24,26 +25,28 @@ class ResourceDetails extends Component {
     );
     return (
       <div>
-        {filteredResource.map((details) => {
-          return (
-            <div className="bg-img-details" key={details.id}>
-              <h4 className="detail-name">{details.name}</h4>
-              <div className="details">
-                <p>{details.number}</p>
-                <p>{details.hours}</p>
-                <p>{details.information}</p>
+        <CssBaseline>
+          {filteredResource.map((details) => {
+            return (
+              <div className="bg-img-details" key={details.id}>
+                <h4 className="detail-name">{details.name}</h4>
+                <div className="details">
+                  <p>{details.number}</p>
+                  <p>{details.hours}</p>
+                  <p>{details.information}</p>
+                </div>
+                <div>
+                  <button className="details-edit" onClick={this.editOnClick}>
+                    Edit
+                  </button>
+                  <button className="details-delete" onClick={this.backOnClick}>
+                    Go Back
+                  </button>
+                </div>
               </div>
-              <div>
-                <button className="details-edit" onClick={this.editOnClick}>
-                  Edit
-                </button>
-                <button className="details-delete" onClick={this.backOnClick}>
-                  Go Back
-                </button>
-              </div>
-            </div>
-          );
-        })}
+            );
+          })}
+        </CssBaseline>
       </div>
     );
   }

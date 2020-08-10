@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import swal from "sweetalert";
+import { CssBaseline } from "@material-ui/core";
 import "./ResourceAdd.css";
 
 class ResourceAdd extends Component {
@@ -93,62 +94,64 @@ class ResourceAdd extends Component {
   render() {
     return (
       <div className="bg-img-add">
-        <h3 className="add-head">Add Your Own Resource!</h3>
-        <form className="columns2" onSubmit={this.addResource}>
-          <div align="center">
-            <input
-              className="input-field2"
-              placeholder="Insert Name"
-              type="text"
-              value={this.state.newResource.name}
-              onChange={this.handleNameChange}
-            />
-          </div>
-          <div align="center">
-            <input
-              className="input-field2"
-              placeholder="Insert Hours"
-              type="text"
-              value={this.state.newResource.hours}
-              onChange={this.handleHoursChange}
-            />
-          </div>
-          <div align="center">
-            <input
-              className="input-field2"
-              placeholder="Insert Number"
-              type="text"
-              value={this.state.newResource.number}
-              onChange={this.handleNumberChange}
-            />
-          </div>
-          <div align="center">
-            <input
-              className="input-field2"
-              placeholder="Insert Address"
-              type="text"
-              value={this.state.newResource.address}
-              onChange={this.handleAddressChange}
-            />
-          </div>
-          <div align="center">
-            <input
-              className="input-field2"
-              placeholder="Insert Information"
-              type="text"
-              value={this.state.newResource.information}
-              onChange={this.handleInfoChange}
-            />
-          </div>
-          <button
-            className="addBtn"
-            size="small"
-            variant="contained"
-            color="secondary"
-          >
-            Add Resource
-          </button>
-        </form>
+        <CssBaseline>
+          <h3 className="add-head">Add Your Own Resource!</h3>
+          <form className="columns2" onSubmit={this.addResource}>
+            <div align="center">
+              <input
+                className="input-field2"
+                placeholder="Insert Name"
+                type="text"
+                value={this.state.newResource.name}
+                onChange={this.handleNameChange}
+              />
+            </div>
+            <div align="center">
+              <input
+                className="input-field2"
+                placeholder="Insert Hours"
+                type="text"
+                value={this.state.newResource.hours}
+                onChange={this.handleHoursChange}
+              />
+            </div>
+            <div align="center">
+              <input
+                className="input-field2"
+                placeholder="Insert Number"
+                type="text"
+                value={this.state.newResource.number}
+                onChange={this.handleNumberChange}
+              />
+            </div>
+            <div align="center">
+              <input
+                className="input-field2"
+                placeholder="Insert Address"
+                type="text"
+                value={this.state.newResource.address}
+                onChange={this.handleAddressChange}
+              />
+            </div>
+            <div align="center">
+              <input
+                className="input-field2"
+                placeholder="Insert Information"
+                type="text"
+                value={this.state.newResource.information}
+                onChange={this.handleInfoChange}
+              />
+            </div>
+            <button
+              className="addBtn"
+              size="small"
+              variant="contained"
+              color="secondary"
+            >
+              Add Resource
+            </button>
+          </form>
+        </CssBaseline>
       </div>
     );
   }
