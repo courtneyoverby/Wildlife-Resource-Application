@@ -1,17 +1,16 @@
 .list-header {
-  text-align: center;
   color: #40231c;
   font-family: Georgia, "Times New Roman", Times, serif;
   font-style: italic;
   font-variant: small-caps;
   font-weight: bold;
-  text-decoration: underline;
+  text-align: center;
 }
 
 .list-desc {
   color: #40231c;
-  text-align: center;
   padding-top: 10px;
+  text-align: center;
 }
 
 .bg-img-list {
@@ -39,5 +38,4 @@
   cursor: pointer;
   font-family: Georgia, "Times New Roman", Times, serif;
   font-size: 12px;
-  float: right;
 }

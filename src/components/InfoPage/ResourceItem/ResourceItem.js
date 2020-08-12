@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import swal from "sweetalert";
 import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
-import { Grid, IconButton, Container } from "@material-ui/core/";
+import { Grid, IconButton, Container, Typography } from "@material-ui/core/";
 import { CssBaseline } from "@material-ui/core";
 import "./ResourceItem.css";
 
@@ -39,30 +39,19 @@ class ResourceItem extends Component {
     return (
       <div>
         <CssBaseline>
-          <Container maxWidth="xs">
-            <Grid item xl>
-              <li>
-                <il
-                  href="#"
-                  className="list-names"
-                  align="center"
-                  onClick={this.onClick(this.props.resources.id)}
-                >
-                  {this.props.resources.name}
-                  <p className="list-address">
-                    - {this.props.resources.address}
-                    <IconButton
-                      className="item-delete"
-                      aria-label="delete"
-                      onClick={this.onDeleteClick}
-                    >
-                      <DeleteIcon />{" "}
-                    </IconButton>
-                  </p>
-                </il>
-              </li>
-            </Grid>
-          </Container>
+          <Typography onClick={this.onClick(this.props.resources.id)}>
+            {this.props.resources.name}
+            <p>
+              {this.props.resources.address}
+              <IconButton
+                className="item-delete"
+                aria-label="delete"
+                onClick={this.onDeleteClick}
+              >
+                <DeleteIcon />
+              </IconButton>
+            </p>
+          </Typography>
         </CssBaseline>
       </div>
     );
