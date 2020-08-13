@@ -1,5 +1,4 @@
 .list-header {
-  color: #40231c;
   font-family: Georgia, "Times New Roman", Times, serif;
   font-style: italic;
   font-variant: small-caps;
@@ -8,7 +7,6 @@
 }
 
 .list-desc {
-  color: #40231c;
   padding-top: 10px;
   text-align: center;
 }

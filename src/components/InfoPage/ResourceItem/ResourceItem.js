@@ -2,11 +2,40 @@ import React, { Component } from "react";
 import swal from "sweetalert";
 import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
+import { withStyles } from "@material-ui/core/styles";
 import { Grid, IconButton, Container, Typography } from "@material-ui/core/";
 import { CssBaseline } from "@material-ui/core";
 import "./ResourceItem.css";
 
 import DeleteIcon from "@material-ui/icons/Delete";
+
+const styles = (theme) => ({
+  root: {
+    maxWidth: "90%",
+    width: "920px",
+    margin: "15px auto",
+    paddingTop: 10,
+    paddingBottom: 10,
+  },
+  paperTransparent: {
+    maxWidth: "90%",
+    width: "920px",
+    margin: "15px auto",
+    paddingTop: 5,
+    paddingBottom: 5,
+    backgroundColor: "#fff0",
+  },
+  padding: {
+    padding: "8px 20px",
+  },
+  selectorSize: {
+    minWidth: 600,
+  },
+  inputMargin: {
+    margin: "10px 0px",
+    minWidth: 600,
+  },
+});
 
 class ResourceItem extends Component {
   onClick = (id) => (event) => {
@@ -36,12 +65,16 @@ class ResourceItem extends Component {
   };
 
   render() {
+    const { classes } = this.props;
     return (
       <div>
         <CssBaseline>
-          <Typography onClick={this.onClick(this.props.resources.id)}>
+          <Typography
+            onClick={this.onClick(this.props.resources.id)}
+            variant="h6"
+          >
             {this.props.resources.name}
-            <p>
+            <Typography classes={{ padding: classes.padding }} elevation={2}>
               {this.props.resources.address}
               <IconButton
                 className="item-delete"
@@ -50,11 +83,11 @@ class ResourceItem extends Component {
               >
                 <DeleteIcon />
               </IconButton>
-            </p>
+            </Typography>
           </Typography>
         </CssBaseline>
       </div>
     );
   }
 }
-export default connect()(withRouter(ResourceItem));
+export default withStyles(styles)(connect()(withRouter(ResourceItem)));
