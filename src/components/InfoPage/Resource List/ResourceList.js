@@ -44,6 +44,10 @@ class ResourceList extends Component {
   componentDidMount() {
     this.props.dispatch({ type: "FETCH_RESOURCES" });
   }
+
+  backOnClick = (event) => {
+    this.props.history.push("/home");
+  };
   render() {
     const { classes } = this.props;
     const handleClick = (path) => (event) => {
@@ -69,7 +73,7 @@ class ResourceList extends Component {
             </Typography>
           </Paper>
           <Container align="center">
-            <Button className="list-add" onClick={handleClick("/add-resource")}>
+            <Button className="list-add" onClick={handleClick("/admin")}>
               Go Back
             </Button>
             <Button

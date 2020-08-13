@@ -58,10 +58,12 @@ class ResourceItem extends Component {
         swal("Poof! Your resource has been deleted!", {
           icon: "success",
         });
+        this.props.history.push(`/resources`);
       } else {
         swal("Your resource is safe!");
       }
     });
+    this.props.history.push(`/resources`);
   };
 
   render() {
@@ -70,11 +72,16 @@ class ResourceItem extends Component {
       <div>
         <CssBaseline>
           <Typography
+            className="resource-item"
             onClick={this.onClick(this.props.resources.id)}
             variant="h6"
           >
             {this.props.resources.name}
-            <Typography classes={{ padding: classes.padding }} elevation={2}>
+            <Typography
+              className="resource-item"
+              classes={{ padding: classes.padding }}
+              elevation={2}
+            >
               {this.props.resources.address}
               <IconButton
                 className="item-delete"

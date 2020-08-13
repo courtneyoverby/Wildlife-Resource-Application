@@ -1,4 +1,5 @@
 .list-header {
+  color: #40231c;
   font-family: Georgia, "Times New Roman", Times, serif;
   font-style: italic;
   font-variant: small-caps;
@@ -7,6 +8,7 @@
 }
 
 .list-desc {
+  color: #40231c;
   padding-top: 10px;
   text-align: center;
 }
@@ -20,19 +22,16 @@
   background-position: right left;
   background-repeat: no-repeat;
   background-attachment: fixed;
+  padding: 20px;
   background-size: cover;
-  padding: 90px;
   height: auto;
 }
 
 .list-add {
-  background-color: #f8f8f8;
   border-radius: 4px;
-  color: #40231c;
   min-height: 50px;
   min-width: 100px;
   outline: 5;
-  outline-color: #40231c;
   cursor: pointer;
   font-family: Georgia, "Times New Roman", Times, serif;
   font-size: 12px;

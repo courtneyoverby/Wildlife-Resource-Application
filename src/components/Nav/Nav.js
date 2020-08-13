@@ -22,7 +22,7 @@ const Nav = (props) => {
          {" "}
       <CssBaseline>
                         
-        <Link className="head-link" to="/home">
+        <Link className="head-link" to="/admin">
           <img
             className="header-logo"
             src="../Images/Wildlife.jpg"
